@@ -1,8 +1,11 @@
-import static org.junit.Assert.*;
+package Test;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import Main.FindSubString;
+import static org.testng.Assert.*;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class FindSubStringTest {
 	
@@ -19,7 +22,7 @@ public class FindSubStringTest {
 	FindSubString subStr11;
 	FindSubString subStr12;
 	
-	@Before 
+	@BeforeMethod 
 	public void setUp() {
 		subStr1 = new FindSubString("abcabcbb");
 		subStr2 = new FindSubString("bbbbbbb");
@@ -35,7 +38,7 @@ public class FindSubStringTest {
 		subStr12 = new FindSubString("");
 	}
 	
-	@Test
+	@Test()
 	public void testLongestSubstringCalc() {
 		
 		subStr1.createSubStr();
@@ -100,7 +103,7 @@ public class FindSubStringTest {
 		/////////////////////////////////////////////
 	}
 
-	@After
+	@AfterMethod
 	public void endMessage() {
 		String endMsg = "\n\nTests have ended in Success!!";
 		System.out.println(endMsg.toUpperCase());
