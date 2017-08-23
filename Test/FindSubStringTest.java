@@ -16,6 +16,8 @@ public class FindSubStringTest {
 	FindSubString subStr8;
 	FindSubString subStr9;
 	FindSubString subStr10;
+	FindSubString subStr11;
+	FindSubString subStr12;
 	
 	@Before 
 	public void setUp() {
@@ -29,6 +31,8 @@ public class FindSubStringTest {
 		subStr8 = new FindSubString("a");
 		subStr9 = new FindSubString("alkjioiaj");
 		subStr10 = new FindSubString("ioajskjoidjlkalk");	
+		subStr11 = new FindSubString(" ");
+		subStr12 = new FindSubString("");
 	}
 	
 	@Test
@@ -83,7 +87,17 @@ public class FindSubStringTest {
 
 		subStr10.print();
 		assertEquals(6, subStr10.longestSubStr()[0]);
-		////////////////////////////////////////////
+		/////////////////////////////////////////////
+		subStr11.createSubStr();
+
+		subStr11.print();
+		assertEquals(1, subStr11.longestSubStr()[0]);
+		/////////////////////////////////////////////
+		subStr12.createSubStr();
+
+		subStr12.print();
+		assertEquals(0, subStr12.longestSubStr()[0]);
+		/////////////////////////////////////////////
 	}
 
 	@After
